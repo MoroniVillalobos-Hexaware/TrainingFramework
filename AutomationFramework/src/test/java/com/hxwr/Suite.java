@@ -10,8 +10,7 @@ public class Suite {
     DriverManager driverManager;
     WebDriver driver;
 
-    @BeforeClass
-    @AfterClass
+
     @Test
     public void navigateToGoogleTest(){
         driverManager=DriverManagerFactory.getdriverManager(DriverType.CHROME);
