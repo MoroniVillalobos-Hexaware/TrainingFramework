@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="10.896">
+    <testcase classname="test" name="test1" time="6.305">
+        <system-out>
+            <![CDATA[Given navigate to url 1.....................................................passed
+Given navigate to url 2.....................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="test" name="test2" time="4.408">
+        <system-out>
+            <![CDATA[Given navigate to url 2.....................................................passed
+Given navigate to url 1.....................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

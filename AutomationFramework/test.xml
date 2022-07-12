@@ -5,9 +5,9 @@
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     </listeners>
 
-    <test name="com.hxwr" >
+    <test name="UserRegistration" >
         <classes>
-            <class name="com.hxwr.Suite" />
+            <class name="Suite" />
         </classes>
     </test>
 
