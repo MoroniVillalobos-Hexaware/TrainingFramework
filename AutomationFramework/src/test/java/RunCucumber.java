@@ -14,9 +14,8 @@ import org.testng.annotations.Test;
                 "html:target/cucumber-reports/cucumber-reports.html",
                 "junit:target/cucumber-reports/Cucumber.xml",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-
         glue = {"com.hxwr.steps" },
-        tags = "@tag1")
+        tags = "@FullRegression")
 
 public class RunCucumber {
     WebDriver driver;

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="10.896">
-    <testcase classname="test" name="test1" time="6.305">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.061">
+    <testcase classname="E Commerce Testing" name="User Registration" time="22.734">
         <system-out>
-            <![CDATA[Given navigate to url 1.....................................................passed
-Given navigate to url 2.....................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="test" name="test2" time="4.408">
-        <system-out>
-            <![CDATA[Given navigate to url 2.....................................................passed
-Given navigate to url 1.....................................................passed
+            <![CDATA[Given open automation_practice_url..........................................passed
+When click on sign in link..................................................passed
+And Enter your email_address in create an account section...................passed
+And click on create an account button.......................................passed
+And enter your personal information address and contact info................passed
+And Click on register button................................................passed
+Then Validate that user is created..........................................passed
 ]]>
         </system-out>
     </testcase>

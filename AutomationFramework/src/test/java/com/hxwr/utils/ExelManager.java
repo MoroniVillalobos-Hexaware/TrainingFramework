@@ -1,11 +1,17 @@
 package com.hxwr.utils;
+
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ExelManager{
     public  void initializeFile() {
@@ -47,7 +53,10 @@ public class ExelManager{
             Row row=propertiesSheet.getRow(i);
             Cell cell_key=  row.getCell(0);
             Cell cell_value=  row.getCell(1);
-            properties.put(cell_key.getStringCellValue(),cell_value.getStringCellValue());
+            DataFormatter formatter = new DataFormatter();
+            String cellKey=formatter.formatCellValue(cell_key);
+            String value=formatter.formatCellValue(cell_value);
+            properties.put(cellKey,value);
         }
         workbook.close();
         return properties;
