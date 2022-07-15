@@ -112,7 +112,7 @@ public class SignInPage {
         }
         try {
             failName="Enter Password";
-            driver.findElement(loginEmailInput).sendKeys(properties.get("password"));
+            driver.findElement(loginPasswordInput).sendKeys(properties.get("password"));
         }catch (Exception e){
             System.out.println(failName);
             return false;

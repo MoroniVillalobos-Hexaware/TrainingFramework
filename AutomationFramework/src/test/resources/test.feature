@@ -45,7 +45,7 @@ Feature:   E Commerce Testing
     When Login to the web site
    #  And Move the cursor over Woman's Link
      And Click on sub menu T-shirts
-#    And Mouse hover on the second product displayed
+      And Mouse hover on the second product displayed
      Then  More button will be displayed , click on more button
      And  Make sure quantity set to 2
      And select size L

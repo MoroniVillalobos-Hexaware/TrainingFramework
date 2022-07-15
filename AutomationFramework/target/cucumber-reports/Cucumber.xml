@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.061">
-    <testcase classname="E Commerce Testing" name="User Registration" time="22.734">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="10.825">
+    <testcase classname="E Commerce Testing" name="Search Product" time="10.604">
         <system-out>
             <![CDATA[Given open automation_practice_url..........................................passed
-When click on sign in link..................................................passed
-And Enter your email_address in create an account section...................passed
-And click on create an account button.......................................passed
-And enter your personal information address and contact info................passed
-And Click on register button................................................passed
-Then Validate that user is created..........................................passed
+And Click on sub menu T-shirts..............................................passed
+And get name text for the first product showed on the page..................passed
+And Enter the same product name in the search bar present on top of the page and click search button.passed
+Then Validate the same product is displayed in search page with same details which were displayed on T-shirt page.passed
 ]]>
         </system-out>
     </testcase>

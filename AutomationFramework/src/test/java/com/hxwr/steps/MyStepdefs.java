@@ -215,7 +215,13 @@ public class MyStepdefs {
 
     @And("^Mouse hover on the second product displayed$")
     public void mouseHoverOnTheSecondProductDisplayed() {
-
+        try {
+            if(!tShirtsPage.mouseHoverOnTheSecondProductDisplayed()){
+                assertion.fail();
+            }
+        }catch (Exception e){
+            assertion.fail();
+        }
     }
 
     @Then("^More button will be displayed , click on more button$")

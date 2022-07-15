@@ -2,6 +2,7 @@ package com.hxwr.pages;
 
 import com.hxwr.steps.hooks;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -22,6 +23,8 @@ public class TShirtsPage {
     By addToCartButton= By.xpath("//button[@name='Submit']");
     By proceedToCheckOut=By.xpath("//a[@title='Proceed to checkout']");
     By proceedToCheckOut2=By.xpath("(//a[@title='Proceed to checkout'])[2]");
+    By proceedToCheckOut3=By.xpath("//button[@name='processAddress']");
+    By proceedToCheckOut4=By.xpath("//button[@name='processCarrier']");
     By agreeOnTermsCheck=By.xpath("//input[@id='cgv']");
     By payByCheckButton=  By.xpath("//a[@title='Pay by check.']");
     By confirmOrderButton = By.xpath("//button[@class='button btn btn-default button-medium']");
@@ -30,6 +33,8 @@ public class TShirtsPage {
     By errorMessageLabelMustBeLoggedToWishList= By.xpath("//p[contains(text(),'You must be logged in to manage your wishlist.')]");
     By closeErrorMessage=By.xpath("//a[@title='Close']");
     By increaseQuantityButton= By.xpath("//a[@id='cart_quantity_up_1_1_0_0']");
+    By firstItem=By.xpath("//ul[@class='product_list grid row']/li[1]");
+
     public boolean getNameTextForTheFirstProductShowedOnThePage(){
         try {
             failName="Click On sub menu T-Shirts";
@@ -136,7 +141,7 @@ public class TShirtsPage {
     }
     public boolean completeTheBuyOrderProcessTillPayment(){
         try {
-            failName="click on Check Out ";
+            failName="click on Check Out 1";
             wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckOut));
             driver.findElement(proceedToCheckOut).click();
             Thread.sleep(1000);
@@ -154,9 +159,9 @@ public class TShirtsPage {
             return false;
         }
         try {
-            failName="click on Check Out ";
-            wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckOut));
-            driver.findElement(proceedToCheckOut).click();
+            failName="click on Check Out 3";
+            wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckOut3));
+            driver.findElement(proceedToCheckOut3).click();
             Thread.sleep(1000);
         }catch (Exception e){
             System.out.println(failName);
@@ -165,16 +170,18 @@ public class TShirtsPage {
         try {
             failName="click on terms Check ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(agreeOnTermsCheck));
-            driver.findElement(agreeOnTermsCheck).click();
+            Actions a = new Actions(driver);
+            a.moveToElement(driver.findElement(agreeOnTermsCheck)).click().perform();
+          //  driver.findElement(agreeOnTermsCheck).click();
             Thread.sleep(1000);
         }catch (Exception e){
             System.out.println(failName);
             return false;
         }
         try {
-            failName="click on Check Out ";
-            wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckOut));
-            driver.findElement(proceedToCheckOut).click();
+            failName="click on Check Out 4";
+            wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckOut4));
+            driver.findElement(proceedToCheckOut4).click();
             Thread.sleep(1000);
         }catch (Exception e){
             System.out.println(failName);
@@ -258,6 +265,16 @@ public class TShirtsPage {
     public boolean verifyThatIsChangingAndReflectingCorrectPrice(){
         try {
 
+        }catch (Exception e){
+            System.out.println(failName);
+            return false;
+        }
+        return true;
+    }
+    public boolean mouseHoverOnTheSecondProductDisplayed(){
+        try {
+            Actions a = new Actions(driver);
+            a.moveToElement(driver.findElement(firstItem)).perform();
         }catch (Exception e){
             System.out.println(failName);
             return false;

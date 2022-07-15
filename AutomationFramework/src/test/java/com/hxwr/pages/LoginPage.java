@@ -4,6 +4,8 @@ import com.hxwr.DriverManager;
 import com.hxwr.steps.hooks;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginPage {
     DriverManager driverManager;
     String stepName="";
@@ -21,7 +23,7 @@ public class LoginPage {
         else{
             driver.get(hooks.properties.get("URL2"));
             driver.manage().window().maximize();}
-
+             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }catch(Exception e){
         System.out.println(e.getMessage());
         return false;
