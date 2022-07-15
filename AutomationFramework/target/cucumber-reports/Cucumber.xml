@@ -1,12 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="10.825">
-    <testcase classname="E Commerce Testing" name="Search Product" time="10.604">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="127.426">
+    <testcase classname="E Commerce Testing" name="User Registration" time="15.35">
+        <system-out>
+            <![CDATA[Given open automation_practice_url..........................................passed
+When click on sign in link..................................................passed
+And Enter your email_address in create an account section...................passed
+And click on create an account button.......................................passed
+And enter your personal information address and contact info................passed
+And Click on register button................................................passed
+Then Validate that user is created..........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="E Commerce Testing" name="Verify Invalid Email address error" time="7.433">
+        <system-out>
+            <![CDATA[Given open automation_practice_url..........................................passed
+When click on sign in link..................................................passed
+And Enter your moroniV123 in the email box and click enter..................passed
+Then Verify That error Message Is Displayed Invalid email address...........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="E Commerce Testing" name="Verify error Message For mandatory fields" time="9.993">
+        <system-out>
+            <![CDATA[Given open automation_practice_url..........................................passed
+When click on sign in link..................................................passed
+And Enter your email_address and click register button......................passed
+And Leave the mandatory fields mark with blank and click register button....passed
+Then Verify that error has been displayed for the mandatory fields..........passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="E Commerce Testing" name="Search Product" time="13.973">
         <system-out>
             <![CDATA[Given open automation_practice_url..........................................passed
 And Click on sub menu T-shirts..............................................passed
 And get name text for the first product showed on the page..................passed
 And Enter the same product name in the search bar present on top of the page and click search button.passed
 Then Validate the same product is displayed in search page with same details which were displayed on T-shirt page.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="E Commerce Testing" name="Buy product feature" time="34.114">
+        <failure message="null" type="java.lang.AssertionError">
+            <![CDATA[Given open automation_practice_url..........................................passed
+Then click on sign in link..................................................passed
+When Login to the web site..................................................passed
+And Click on sub menu T-shirts..............................................passed
+And Mouse hover on the second product displayed.............................passed
+Then More button will be displayed , click on more button...................passed
+And Make sure quantity set to 2.............................................passed
+And select size L...........................................................passed
+Then Select Color...........................................................passed
+Then Click Add to Car button................................................passed
+Then Complete the buy order process till payment............................failed
+Then Make Sure that Product Is Ordered......................................skipped
+
+StackTrace:
+java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at org.testng.asserts.Assertion$7.doAssert(Assertion.java:146)
+	at org.testng.asserts.Assertion.executeAssert(Assertion.java:25)
+	at org.testng.asserts.Assertion.doAssert(Assertion.java:12)
+	at org.testng.asserts.Assertion.fail(Assertion.java:142)
+	at com.hxwr.steps.MyStepdefs.completeTheBuyOrderProcessTillPayment(MyStepdefs.java:286)
+	at ✽.Complete the buy order process till payment(file:///C:/Users/75504/IdeaProjects/TrainingFramework/TrainingFramework/AutomationFramework/src/test/resources/test.feature:54)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="E Commerce Testing" name="Verify that Wish List Only Works After Login" time="11.133">
+        <system-out>
+            <![CDATA[Given open automation_practice_url..........................................passed
+And Click on sub menu T-shirts..............................................passed
+And Mouse hover on the second product displayed.............................passed
+Then Add To Wish List will appear on the Bottom of that product and click on it.passed
+Then Verify That error Message Is Displayed You Must be Logged In to Manage You wish List.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="E Commerce Testing" name="Verify that total price is reflecting correctly if user changes quantity in shopping cart" time="35.187">
+        <system-out>
+            <![CDATA[Given open automation_practice_url..........................................passed
+Then click on sign in link..................................................passed
+When Login to the web site..................................................passed
+And Click on sub menu T-shirts..............................................passed
+And Mouse hover on the second product displayed.............................passed
+Then More button will be displayed , click on more button...................passed
+Then Make sure quantity set to 1............................................passed
+And select size M...........................................................passed
+And Select Color............................................................passed
+Then Click Add to Car button................................................passed
+Then Click Proceed To Check out Button......................................passed
+Then Change The Quantity to 2...............................................passed
+Then Verify That is changing and reflecting correct price...................passed
 ]]>
         </system-out>
     </testcase>
