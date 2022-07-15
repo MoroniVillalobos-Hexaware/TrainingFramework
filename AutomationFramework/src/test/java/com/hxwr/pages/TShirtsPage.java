@@ -2,9 +2,15 @@ package com.hxwr.pages;
 
 import com.hxwr.steps.hooks;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.hxwr.steps.hooks.*;
 
@@ -25,16 +31,20 @@ public class TShirtsPage {
     By proceedToCheckOut2=By.xpath("(//a[@title='Proceed to checkout'])[2]");
     By proceedToCheckOut3=By.xpath("//button[@name='processAddress']");
     By proceedToCheckOut4=By.xpath("//button[@name='processCarrier']");
-    By agreeOnTermsCheck=By.xpath("//input[@id='cgv']");
+    By agreeOnTermsCheck=By.id("cgv");
     By payByCheckButton=  By.xpath("//a[@title='Pay by check.']");
     By confirmOrderButton = By.xpath("//button[@class='button btn btn-default button-medium']");
     By orderCompleteLabel=By.xpath("//p[contains(text(),'Your order on My Store is complete')]");
     By addWishListButton=By.xpath("//a[@class='addToWishlist wishlistProd_1']");
     By errorMessageLabelMustBeLoggedToWishList= By.xpath("//p[contains(text(),'You must be logged in to manage your wishlist.')]");
     By closeErrorMessage=By.xpath("//a[@title='Close']");
-    By increaseQuantityButton= By.xpath("//a[@id='cart_quantity_up_1_1_0_0']");
     By firstItem=By.xpath("//ul[@class='product_list grid row']/li[1]");
+    By unitPrice=By.xpath("//span/span[@class='price']");
+    By quantity=By.xpath("//input[@class='cart_quantity_input form-control grey']");
+    By totalShipping=By.xpath("//td[@id='total_shipping']");
+    By totalPrice=By.xpath("//span[@id='total_price']");
 
+    By headingCounter=By.xpath("//span[@id='summary_products_quantity']");
     public boolean getNameTextForTheFirstProductShowedOnThePage(){
         try {
             failName="Click On sub menu T-Shirts";
@@ -133,10 +143,22 @@ public class TShirtsPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(addToCartButton));
             driver.findElement(addToCartButton).click();
             Thread.sleep(1000);
+
         }catch (Exception e){
             System.out.println(failName);
             return false;
         }
+        try {
+            failName="get total price";
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='layer_cart_product_price']")));
+            String Qty1Total=  driver.findElement(By.xpath("//span[@id='layer_cart_product_price']")).getText().replace("$","").trim();
+            properties.put("quantity1_total",Qty1Total);
+            Thread.sleep(1000);
+        }catch (Exception e){
+            System.out.println(failName);
+            return false;
+        }
+
         return true;
     }
     public boolean completeTheBuyOrderProcessTillPayment(){
@@ -170,10 +192,7 @@ public class TShirtsPage {
         try {
             failName="click on terms Check ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(agreeOnTermsCheck));
-            Actions a = new Actions(driver);
-            a.moveToElement(driver.findElement(agreeOnTermsCheck)).click().perform();
-          //  driver.findElement(agreeOnTermsCheck).click();
-            Thread.sleep(1000);
+             driver.findElement(agreeOnTermsCheck).click();
         }catch (Exception e){
             System.out.println(failName);
             return false;
@@ -252,19 +271,77 @@ public class TShirtsPage {
     }
     public boolean changeTheQuantityTo(){
         try {
-            failName="close error message";
-            wait.until(ExpectedConditions.visibilityOfElementLocated(increaseQuantityButton));
-            driver.findElement(increaseQuantityButton).click();
+            failName="change quantity to 2";
+            wait.until(ExpectedConditions.visibilityOfElementLocated(quantity));
+            driver.findElement(quantity).clear();
             Thread.sleep(1000);
+            driver.findElement(quantity).sendKeys("2");
+            Thread.sleep(8000);
         }catch (Exception e){
             System.out.println(failName);
             return false;
         }
+
+            failName="wait for 2 products on heading counter";
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'2 Products')]")));
+            if(!driver.findElement(headingCounter).getText().contains("2 Products")){
+            System.out.println(failName);
+            return false;
+            }
+
         return true;
     }
     public boolean verifyThatIsChangingAndReflectingCorrectPrice(){
+        Double unitPrice_=0.0;
+        Integer quantity_=0;
+        Double shipping_=0.0;
+        Double totalPrice_=0.0;
+        String s="";
         try {
-
+            try {
+                failName="get unit price";
+             unitPrice_=Double.parseDouble(driver.findElement(unitPrice).getText().replace("$","").trim());
+            }catch (Exception e){
+                System.out.println(failName);
+                return false;
+            }
+            try {
+               failName="get Quantity";
+                wait.until(ExpectedConditions.visibilityOfElementLocated(headingCounter));
+                s= driver.findElement(headingCounter).getText().replace("Products","").trim();
+               quantity_= Integer.parseInt(s);
+               String sd="";
+            }catch (Exception e){
+                System.out.println(failName);
+                return false;
+            }
+            try {
+                failName="get shipping";
+               shipping_=Double.parseDouble(driver.findElement(totalShipping).getText().replace("$","").trim());
+            }catch (Exception e){
+                System.out.println(failName);
+                return false;
+            }
+            try {
+                failName="get total price";
+               totalPrice_=Double.parseDouble(driver.findElement(totalPrice).getText().replace("$","").trim());
+            }catch (Exception e){
+                System.out.println(failName);
+                return false;
+            }
+            failName="validate price change ";
+            String f=hooks.properties.get("quantity1_total");
+            if(Double.parseDouble(hooks.properties.get("quantity1_total"))==totalPrice_){
+                System.out.println(failName);
+                return false;
+            }
+            failName="validate correct price";
+            double i =unitPrice_*quantity_+shipping_;
+            if(totalPrice_!=unitPrice_*quantity_+shipping_){
+                System.out.println(failName);
+                return false;
+            }
+            Thread.sleep(1000);
         }catch (Exception e){
             System.out.println(failName);
             return false;
@@ -279,6 +356,25 @@ public class TShirtsPage {
             System.out.println(failName);
             return false;
         }
+        return true;
+    }
+    public boolean clickProceedToCheckOutButton(){
+        try {
+
+        try {
+            failName="click on Check Out 1";
+            wait.until(ExpectedConditions.visibilityOfElementLocated(proceedToCheckOut));
+            driver.findElement(proceedToCheckOut).click();
+            Thread.sleep(1000);
+        }catch (Exception e){
+            System.out.println(failName);
+            return false;
+        }
+
+    }catch (Exception e){
+        System.out.println(failName);
+        return false;
+    }
         return true;
     }
 }

@@ -325,7 +325,13 @@ public class MyStepdefs {
 
     @Then("^Click Proceed To Check out Button$")
     public void clickProceedToCheckOutButton() {
-
+        try {
+            if(!tShirtsPage.clickProceedToCheckOutButton()){
+                assertion.fail();
+            }
+        }catch (Exception e){
+            assertion.fail();
+        }
     }
 
     @Then("^Change The Quantity to 2$")
@@ -341,10 +347,7 @@ public class MyStepdefs {
 
     @Then("^Verify That is changing and reflecting correct price$")
     public void verifyThatIsChangingAndReflectingCorrectPrice() {
-        //span/span[@class='price']
-        //input[@class='cart_quantity_input form-control grey']
-        //td[@id='total_shipping']
-        //span[@id=
+
         try {
             if(!tShirtsPage.verifyThatIsChangingAndReflectingCorrectPrice()){
                 assertion.fail();

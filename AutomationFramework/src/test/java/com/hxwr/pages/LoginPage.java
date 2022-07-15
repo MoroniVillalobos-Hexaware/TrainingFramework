@@ -23,7 +23,7 @@ public class LoginPage {
         else{
             driver.get(hooks.properties.get("URL2"));
             driver.manage().window().maximize();}
-             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }catch(Exception e){
         System.out.println(e.getMessage());
         return false;

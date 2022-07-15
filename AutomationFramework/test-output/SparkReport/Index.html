@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 15, 2022 04:54:19 AM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@FullRegression</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">E Commerce Testing</p>
+            <p class="text-sm">
+              <span>4:54:19 AM</span> / <span>00:02:07:136</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">E Commerce Testing</h5>
+<span class='badge badge-success'>07.15.2022 4:54:19 AM</span>
+<span class='badge badge-danger'>07.15.2022 4:56:27 AM</span>
+<span class='badge badge-default'>00:02:07:136</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User Registration</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.open(java.lang.String)">
+                <span>Given open automation_practice_url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSignInLink()">
+                <span>When click on sign in link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.enterYourInCreateAnAccountSection(java.lang.String)">
+                <span>And Enter your email_address in create an account section</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnCreateAnAccountButton()">
+                <span>And click on create an account button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.enterYourPersonalInformationAnd()">
+                <span>And enter your personal information address and contact info</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnRegisterButton()">
+                <span>And Click on register button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.validateThatUserIsCreated()">
+                <span>Then Validate that user is created</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>Verify Invalid Email address error</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.open(java.lang.String)">
+                <span>Given open automation_practice_url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSignInLink()">
+                <span>When click on sign in link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.enterYourInTheEmailBoxAndClickEnter(java.lang.String)">
+                <span>And Enter your moroniV123 in the email box and click enter</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.verifyThatErrorMessageIsDisplayed()">
+                <span>Then Verify That error Message Is Displayed Invalid email address</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="19"><span class="badge log pass-bg mr-2">Pass</span>Verify error Message For mandatory fields</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.open(java.lang.String)">
+                <span>Given open automation_practice_url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSignInLink()">
+                <span>When click on sign in link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.enterYourEmailAndClickRegisterButton(java.lang.String)">
+                <span>And Enter your email_address and click register button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.leaveTheMandatoryFieldsMarkWithBlankAndClickRegisterButton()">
+                <span>And Leave the mandatory fields mark with blank and click register button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.verifyThatErrorHasBeenDisplayedForTheMandatoryFields()">
+                <span>Then Verify that error has been displayed for the mandatory fields</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>Search Product</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.open(java.lang.String)">
+                <span>Given open automation_practice_url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSubMenuTShirts()">
+                <span>And Click on sub menu T-shirts</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.getNameTextForTheFirstProductShowedOnThePage()">
+                <span>And get name text for the first product showed on the page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.enterTheSameProductNameInTheSearchBarPresentOnTopOfThePageAndClickSearchButton()">
+                <span>And Enter the same product name in the search bar present on top of the page and click search button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.validateTheSameProductIsDisplayedInSearchPageWithSameDetailsWhichWereDisplayedOnTShirtPage()">
+                <span>Then Validate the same product is displayed in search page with same details which were displayed on T-shirt page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="35"><span class="badge log fail-bg mr-2">Fail</span>Buy product feature</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.open(java.lang.String)">
+                <span>Given open automation_practice_url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSignInLink()">
+                <span>Then click on sign in link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.loginToTheWebSite()">
+                <span>When Login to the web site</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSubMenuTShirts()">
+                <span>And Click on sub menu T-shirts</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.mouseHoverOnTheSecondProductDisplayed()">
+                <span>And Mouse hover on the second product displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.moreButtonWillBeDisplayedClickOnMoreButton()">
+                <span>Then More button will be displayed , click on more button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.increaseQuantityTo(java.lang.String)">
+                <span>And Make sure quantity set to 2</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.selectSize(java.lang.String)">
+                <span>And select size L</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.selectColor()">
+                <span>Then Select Color</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickAddToCarButton()">
+                <span>Then Click Add to Car button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="com.hxwr.steps.MyStepdefs.completeTheBuyOrderProcessTillPayment()">
+                <span>Then Complete the buy order process till payment</span>
+      <div>
+        <textarea disabled class="code-block">java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.fail(Assert.java:115)
+	at org.testng.asserts.Assertion$7.doAssert(Assertion.java:146)
+	at org.testng.asserts.Assertion.executeAssert(Assertion.java:25)
+	at org.testng.asserts.Assertion.doAssert(Assertion.java:12)
+	at org.testng.asserts.Assertion.fail(Assertion.java:142)
+	at com.hxwr.steps.MyStepdefs.completeTheBuyOrderProcessTillPayment(MyStepdefs.java:286)
+	at ✽.Complete the buy order process till payment(file:///C:/Users/75504/IdeaProjects/TrainingFramework/TrainingFramework/AutomationFramework/src/test/resources/test.feature:54)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step skip-bg" title="com.hxwr.steps.MyStepdefs.makeSureThatProductIsOrdered()">
+                <span>Then Make Sure that Product Is Ordered</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Verify that Wish List Only Works After Login</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.open(java.lang.String)">
+                <span>Given open automation_practice_url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSubMenuTShirts()">
+                <span>And Click on sub menu T-shirts</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.mouseHoverOnTheSecondProductDisplayed()">
+                <span>And Mouse hover on the second product displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.addToWishListWillAppearOnTheBottomOfThatProductAndClickOnIt()">
+                <span>Then Add To Wish List will appear on the Bottom of that product and click on it</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.verifyThatErrorMessageIsDisplayedYouMustBeLoggedInToManageYouWishList()">
+                <span>Then Verify That error Message Is Displayed You Must be Logged In to Manage You wish List</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="58"><span class="badge log pass-bg mr-2">Pass</span>Verify that total price is reflecting correctly if user changes quantity in shopping cart</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.open(java.lang.String)">
+                <span>Given open automation_practice_url</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSignInLink()">
+                <span>Then click on sign in link</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.loginToTheWebSite()">
+                <span>When Login to the web site</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickOnSubMenuTShirts()">
+                <span>And Click on sub menu T-shirts</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.mouseHoverOnTheSecondProductDisplayed()">
+                <span>And Mouse hover on the second product displayed</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.moreButtonWillBeDisplayedClickOnMoreButton()">
+                <span>Then More button will be displayed , click on more button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.increaseQuantityTo(java.lang.String)">
+                <span>Then Make sure quantity set to 1</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.selectSize(java.lang.String)">
+                <span>And select size M</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.selectColor()">
+                <span>And Select Color</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickAddToCarButton()">
+                <span>Then Click Add to Car button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.clickProceedToCheckOutButton()">
+                <span>Then Click Proceed To Check out Button</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.changeTheQuantityTo()">
+                <span>Then Change The Quantity to 2</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.hxwr.steps.MyStepdefs.verifyThatIsChangingAndReflectingCorrectPrice()">
+                <span>Then Verify That is changing and reflecting correct price</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">java.lang.AssertionError</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.AssertionError</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>04:55:26 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='47'>Then Complete the buy order process till payment</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.Buy product feature.Then Complete the buy order process till payment</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>6</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@FullRegression</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@FullRegression</h4>
+<span status="pass" class='badge log pass-bg'>6 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>04:54:19 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>User Registration</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.User Registration</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>04:54:35 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='12'>Verify Invalid Email address error</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.Verify Invalid Email address error</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>04:54:42 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='19'>Verify error Message For mandatory fields</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.Verify error Message For mandatory fields</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>04:54:52 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='27'>Search Product</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.Search Product</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>04:55:06 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='35'>Buy product feature</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.Buy product feature</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>04:55:40 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='50'>Verify that Wish List Only Works After Login</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.Verify that Wish List Only Works After Login</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>04:55:51 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='58'>Verify that total price is reflecting correctly if user changes quantity in shopping cart</a>
+<div class="">
+<span class="badge badge-default">E Commerce Testing.Verify that total price is reflecting correctly if user changes quantity in shopping cart</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 15, 2022 04:54:19 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 15, 2022 04:56:27 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='85%'><b>6</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='14%'><b>1</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='96%'><b>49</b> steps passed</small></div>
+<div>
+<small data-tooltip='1%'><b>1</b> steps failed,
+<b>1</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"E Commerce Testing":127.136
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@FullRegression</td>
+<td>6</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>85.714%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 6,
+failChild: 1,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 49,
+failGrandChild: 1,
+warningGrandChild: 0,
+skipGrandChild: 1,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

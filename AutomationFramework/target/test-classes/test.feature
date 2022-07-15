@@ -64,10 +64,11 @@ Feature:   E Commerce Testing
 
   Scenario:Verify that total price is reflecting correctly if user changes quantity in shopping cart
     Given open automation_practice_url
+    Then click on sign in link
     When Login to the web site
     #When Move the cursor over Woman's Link
     And Click on sub menu T-shirts
-    #And Mouse hover on the second product displayed
+    And Mouse hover on the second product displayed
     Then  More button will be displayed , click on more button
     Then Make sure quantity set to 1
     And select size M
