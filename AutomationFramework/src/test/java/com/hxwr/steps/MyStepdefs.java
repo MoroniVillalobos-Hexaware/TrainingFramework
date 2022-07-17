@@ -21,14 +21,14 @@ public class MyStepdefs {
          myAccountPage=new MyAccountPage();
          tShirtsPage=new TShirtsPage();
     }
-    @Given("^open (.+)$")
-    public void open(String url) {
+    @Given("^open (.+) in browser (CHROME|FIREFOX)$")
+    public void open(String url,String browser) {
         try {
-            if(!mainPage.navigateToUrl(hooks.properties.get(url))){
-                assertion.fail();
+            if(!mainPage.navigateToUrl(hooks.properties.get(url),browser)){
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -36,10 +36,10 @@ public class MyStepdefs {
     public void clickOnSignInLink() {
         try {
             if(!mainPage.clickOnSignButton()){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -47,10 +47,10 @@ public class MyStepdefs {
     public void enterYourInCreateAnAccountSection(String email) {
         try {
             if(!signInPage.enterEmailAddres(hooks.properties.get(email))){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -58,10 +58,10 @@ public class MyStepdefs {
     public void clickOnCreateAnAccountButton() {
         try {
             if(!signInPage.clickOnCreateAccountbutton()){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -69,10 +69,10 @@ public class MyStepdefs {
     public void enterYourPersonalInformationAnd() {
         try {
             if(!accountCreationPage.enterYourPersonalInformation()){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -80,10 +80,10 @@ public class MyStepdefs {
     public void clickOnRegisterButton() {
         try {
             if(!accountCreationPage.clickOnRegisterButton()){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -91,10 +91,10 @@ public class MyStepdefs {
     public void validateThatUserIsCreated() {
         try {
             if(!myAccountPage.validateThatUserIsCreated()){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -102,10 +102,10 @@ public class MyStepdefs {
     public void enterYourInTheEmailBoxAndClickEnter(String email) {
         try {
             if(!signInPage.enterInvalidEmail(email)){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -115,10 +115,10 @@ public class MyStepdefs {
     public void enterYourEmailAndClickRegisterButton(String email) {
         try {
             if(!signInPage.enterYourEmailAndClickRegisterButton(hooks.properties.get(email))){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -126,10 +126,10 @@ public class MyStepdefs {
     public void leaveTheMandatoryFieldsMarkWithBlankAndClickRegisterButton() {
         try {
             if(!accountCreationPage.leaveTheMandatoryFieldsMarkWithBlankAndClickRegisterButton()){
-                assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -137,10 +137,10 @@ public class MyStepdefs {
     public void verifyThatErrorHasBeenDisplayedForTheMandatoryFields() {
         try {
             if(!accountCreationPage.verifyThatErrorHasBeenDisplayedForTheMandatoryFields()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -155,17 +155,23 @@ public class MyStepdefs {
 
     @When("^Move the cursor over Woman's Link$")
     public void moveTheCursorOverWomanSLink() {
-
+        try {
+            if(!mainPage.moveTheCursorOverWomanSLink()){
+                assertion.fail(hooks.FailureTestMessage);
+            }
+        }catch (Exception e){
+            assertion.fail(hooks.FailureTestMessage);
+        }
     }
 
     @And("^Click on sub menu T-shirts$")
     public void clickOnSubMenuTShirts() {
         try {
             if(!mainPage.clickOnSubMenuTShirts()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -173,10 +179,10 @@ public class MyStepdefs {
     public void getNameTextForTheFirstProductShowedOnThePage() {
         try {
             if(!tShirtsPage.getNameTextForTheFirstProductShowedOnThePage()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -184,10 +190,10 @@ public class MyStepdefs {
     public void enterTheSameProductNameInTheSearchBarPresentOnTopOfThePageAndClickSearchButton() {
         try {
             if(!tShirtsPage.enterTheSameProductNameInTheSearchBarPresentOnTopOfThePageAndClickSearchButton()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -195,10 +201,10 @@ public class MyStepdefs {
     public void validateTheSameProductIsDisplayedInSearchPageWithSameDetailsWhichWereDisplayedOnTShirtPage() {
         try {
             if(!tShirtsPage.validateTheSameProductIsDisplayedInSearchPageWithSameDetailsWhichWereDisplayedOnTShirtPage()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -206,10 +212,10 @@ public class MyStepdefs {
     public void loginToTheWebSite() {
         try {
             if(!signInPage.loginToTheWebSite()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -217,10 +223,10 @@ public class MyStepdefs {
     public void mouseHoverOnTheSecondProductDisplayed() {
         try {
             if(!tShirtsPage.mouseHoverOnTheSecondProductDisplayed()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -228,10 +234,10 @@ public class MyStepdefs {
     public void moreButtonWillBeDisplayedClickOnMoreButton() {
         try {
             if(!tShirtsPage.moreButtonWillBeDisplayedClickOnMoreButton()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -239,10 +245,10 @@ public class MyStepdefs {
     public void increaseQuantityTo(String qty) {
         try {
             if(!tShirtsPage.increaseQuantityTo(qty)){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -250,10 +256,10 @@ public class MyStepdefs {
     public void selectSize(String size) {
         try {
             if(!tShirtsPage.selectSizeL(size)){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -261,10 +267,10 @@ public class MyStepdefs {
     public void selectColor() {
         try {
             if(!tShirtsPage.selectColor()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -272,10 +278,10 @@ public class MyStepdefs {
     public void clickAddToCarButton() {
         try {
             if(!tShirtsPage.clickAddToCarButton()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -283,10 +289,10 @@ public class MyStepdefs {
     public void completeTheBuyOrderProcessTillPayment() {
         try {
             if(!tShirtsPage.completeTheBuyOrderProcessTillPayment()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -294,10 +300,10 @@ public class MyStepdefs {
     public void makeSureThatProductIsOrdered() {
         try {
             if(!tShirtsPage.makeSureThatProductIsOrdered()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -305,10 +311,10 @@ public class MyStepdefs {
     public void addToWishListWillAppearOnTheBottomOfThatProductAndClickOnIt() {
         try {
             if(!tShirtsPage.addToWishListWillAppearOnTheBottomOfThatProductAndClickOnIt()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -316,10 +322,10 @@ public class MyStepdefs {
     public void verifyThatErrorMessageIsDisplayed() {
         try {
             if(!signInPage.verifyThatErrorMessageIsDisplayed()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -327,10 +333,10 @@ public class MyStepdefs {
     public void clickProceedToCheckOutButton() {
         try {
             if(!tShirtsPage.clickProceedToCheckOutButton()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -338,10 +344,10 @@ public class MyStepdefs {
     public void changeTheQuantityTo() {
         try {
             if(!tShirtsPage.changeTheQuantityTo()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -350,10 +356,10 @@ public class MyStepdefs {
 
         try {
             if(!tShirtsPage.verifyThatIsChangingAndReflectingCorrectPrice()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 
@@ -363,10 +369,10 @@ public class MyStepdefs {
 
         try {
             if(!tShirtsPage.verifyThatErrorMessageIsDisplayedYouMustBeLoggedInToManageYouWishList()){
-                assertion.fail();
+                    assertion.fail(hooks.FailureTestMessage);
             }
         }catch (Exception e){
-            assertion.fail();
+                assertion.fail(hooks.FailureTestMessage);
         }
     }
 }

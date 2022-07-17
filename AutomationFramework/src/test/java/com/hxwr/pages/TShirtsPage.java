@@ -1,5 +1,6 @@
 package com.hxwr.pages;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.hxwr.steps.hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,9 +18,6 @@ import static com.hxwr.steps.hooks.*;
 public class TShirtsPage {
     String failName="";
 
-    public TShirtsPage(){
-        driver= driverManager.getWebDriver();
-    }
     By firstItemName= By.xpath("(//div[@id='center_column']/ul/li)[1]//a[@class='product-name']");
     By searchInput=By.xpath("//input[@id='search_query_top']");
     By moreButton=By.xpath("//a[@class='button lnk_view btn btn-default']");
@@ -31,7 +29,7 @@ public class TShirtsPage {
     By proceedToCheckOut2=By.xpath("(//a[@title='Proceed to checkout'])[2]");
     By proceedToCheckOut3=By.xpath("//button[@name='processAddress']");
     By proceedToCheckOut4=By.xpath("//button[@name='processCarrier']");
-    By agreeOnTermsCheck=By.id("cgv");
+    By agreeOnTermsCheck=By.xpath("//label[contains(text(),'I agree to the terms')]");
     By payByCheckButton=  By.xpath("//a[@title='Pay by check.']");
     By confirmOrderButton = By.xpath("//button[@class='button btn btn-default button-medium']");
     By orderCompleteLabel=By.xpath("//p[contains(text(),'Your order on My Store is complete')]");
@@ -51,7 +49,8 @@ public class TShirtsPage {
          hooks.properties.put("firstItemName", driver.findElement(firstItemName).getText());
          Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -63,7 +62,8 @@ public class TShirtsPage {
             driver.findElement(searchInput).sendKeys(itemToSearch);
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -72,7 +72,8 @@ public class TShirtsPage {
             driver.findElement(searchInput).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -83,7 +84,8 @@ public class TShirtsPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(firstItemName));
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -95,7 +97,8 @@ public class TShirtsPage {
             driver.findElement(moreButton).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -108,7 +111,8 @@ public class TShirtsPage {
             driver.findElement(quantityInput).sendKeys(qty);
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -120,7 +124,8 @@ public class TShirtsPage {
             select.selectByVisibleText(size);
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -132,7 +137,8 @@ public class TShirtsPage {
             driver.findElement(colorRef).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -145,7 +151,8 @@ public class TShirtsPage {
             Thread.sleep(1000);
 
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -155,7 +162,8 @@ public class TShirtsPage {
             properties.put("quantity1_total",Qty1Total);
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
 
@@ -168,7 +176,8 @@ public class TShirtsPage {
             driver.findElement(proceedToCheckOut).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -177,7 +186,8 @@ public class TShirtsPage {
             driver.findElement(proceedToCheckOut2).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -186,15 +196,18 @@ public class TShirtsPage {
             driver.findElement(proceedToCheckOut3).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="click on terms Check ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(agreeOnTermsCheck));
+            wait.until(ExpectedConditions.elementToBeClickable(agreeOnTermsCheck));
              driver.findElement(agreeOnTermsCheck).click();
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -203,7 +216,8 @@ public class TShirtsPage {
             driver.findElement(proceedToCheckOut4).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -212,7 +226,8 @@ public class TShirtsPage {
             driver.findElement(payByCheckButton).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -221,7 +236,8 @@ public class TShirtsPage {
             driver.findElement(confirmOrderButton).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -232,7 +248,8 @@ public class TShirtsPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(orderCompleteLabel));
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -244,7 +261,8 @@ public class TShirtsPage {
             driver.findElement(addWishListButton).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -255,7 +273,8 @@ public class TShirtsPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageLabelMustBeLoggedToWishList));
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -265,6 +284,7 @@ public class TShirtsPage {
             Thread.sleep(1000);
         }catch (Exception e){
             System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -279,14 +299,16 @@ public class TShirtsPage {
             Thread.sleep(8000);
         }catch (Exception e){
             System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
 
             failName="wait for 2 products on heading counter";
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'2 Products')]")));
             if(!driver.findElement(headingCounter).getText().contains("2 Products")){
-            System.out.println(failName);
-            return false;
+                System.out.println(failName);
+                ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+                return false;
             }
 
         return true;
@@ -303,6 +325,7 @@ public class TShirtsPage {
              unitPrice_=Double.parseDouble(driver.findElement(unitPrice).getText().replace("$","").trim());
             }catch (Exception e){
                 System.out.println(failName);
+                ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
                 return false;
             }
             try {
@@ -313,6 +336,7 @@ public class TShirtsPage {
                String sd="";
             }catch (Exception e){
                 System.out.println(failName);
+                ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
                 return false;
             }
             try {
@@ -320,6 +344,7 @@ public class TShirtsPage {
                shipping_=Double.parseDouble(driver.findElement(totalShipping).getText().replace("$","").trim());
             }catch (Exception e){
                 System.out.println(failName);
+                ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
                 return false;
             }
             try {
@@ -327,23 +352,27 @@ public class TShirtsPage {
                totalPrice_=Double.parseDouble(driver.findElement(totalPrice).getText().replace("$","").trim());
             }catch (Exception e){
                 System.out.println(failName);
+                ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
                 return false;
             }
             failName="validate price change ";
             String f=hooks.properties.get("quantity1_total");
             if(Double.parseDouble(hooks.properties.get("quantity1_total"))==totalPrice_){
-                System.out.println(failName);
-                return false;
+                 System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+            return false;
             }
             failName="validate correct price";
             double i =unitPrice_*quantity_+shipping_;
             if(totalPrice_!=unitPrice_*quantity_+shipping_){
-                System.out.println(failName);
-                return false;
+                 System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+            return false;
             }
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -353,7 +382,8 @@ public class TShirtsPage {
             Actions a = new Actions(driver);
             a.moveToElement(driver.findElement(firstItem)).perform();
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -367,13 +397,15 @@ public class TShirtsPage {
             driver.findElement(proceedToCheckOut).click();
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
 
     }catch (Exception e){
-        System.out.println(failName);
-        return false;
+            System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+            return false;
     }
         return true;
     }

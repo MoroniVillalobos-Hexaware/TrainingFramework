@@ -1,4 +1,5 @@
 package com.hxwr.pages;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,10 +10,6 @@ import static com.hxwr.steps.hooks.*;
 
 public class SignInPage {
     String failName="";
-    public SignInPage(){
-        driver= driverManager.getWebDriver();
-    }
-
     By createAnAccountButton= By.xpath("//button[@id='SubmitCreate']");
     By emailInput= By.xpath("//input[@id='email_create']");
     By invalidEmailLabel=By.xpath("//*[contains(text(),'Invalid email address')]");
@@ -31,7 +28,8 @@ public class SignInPage {
             driver.findElement(emailInput).sendKeys(email);
             Thread.sleep(1000);
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -42,7 +40,8 @@ public class SignInPage {
             wait.until(ExpectedConditions.elementToBeClickable(createAnAccountButton));
             driver.findElement(createAnAccountButton).click();
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -53,7 +52,8 @@ public class SignInPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(invalidEmailLabel));
 
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -64,7 +64,8 @@ public class SignInPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
             driver.findElement(emailInput).sendKeys(email);
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -72,7 +73,8 @@ public class SignInPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
             driver.findElement(emailInput).sendKeys(Keys.ENTER);
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -88,7 +90,8 @@ public class SignInPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
             driver.findElement(emailInput).sendKeys(email);
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -96,7 +99,8 @@ public class SignInPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(createAnAccountButton));
             driver.findElement(createAnAccountButton).click();
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -107,21 +111,24 @@ public class SignInPage {
             wait.until(ExpectedConditions.visibilityOfElementLocated(loginEmailInput));
             driver.findElement(loginEmailInput).sendKeys(properties.get("email_address"));
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter Password";
             driver.findElement(loginPasswordInput).sendKeys(properties.get("password"));
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Click on Submit Button";
             driver.findElement(loginSubmitButton).click();
         }catch (Exception e){
-            System.out.println(failName);
+             System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;

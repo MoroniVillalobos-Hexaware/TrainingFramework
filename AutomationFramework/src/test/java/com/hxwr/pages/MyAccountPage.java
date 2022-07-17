@@ -1,5 +1,6 @@
 package com.hxwr.pages;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -8,9 +9,7 @@ import static com.hxwr.steps.hooks.*;
 public class MyAccountPage {
     String failName="";
 
-    public MyAccountPage(){
-        driver= driverManager.getWebDriver();
-    }
+
     By accountCreatedLabel= By.xpath("//*[contains(text(),'Welcome to your account')]");
    public boolean validateThatUserIsCreated(){
        try {
@@ -19,8 +18,9 @@ public class MyAccountPage {
            driver.findElement(accountCreatedLabel);
            Thread.sleep(1000);
        }catch (Exception e){
-           System.out.println(failName);
-           return false;
+            System.out.println(failName);
+             ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+            return false;
        }
        return true;
    }

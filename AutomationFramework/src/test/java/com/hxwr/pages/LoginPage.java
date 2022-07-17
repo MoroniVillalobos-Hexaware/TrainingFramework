@@ -1,5 +1,6 @@
 package com.hxwr.pages;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.hxwr.DriverManager;
 import com.hxwr.steps.hooks;
 import org.openqa.selenium.WebDriver;
@@ -25,8 +26,9 @@ public class LoginPage {
             driver.manage().window().maximize();}
              driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }catch(Exception e){
-        System.out.println(e.getMessage());
-        return false;
+          System.out.println(stepName);
+              ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+stepName);
+            return false;
     }
         return true;
     }

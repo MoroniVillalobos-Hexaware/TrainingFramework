@@ -1,5 +1,6 @@
 package com.hxwr.pages;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.hxwr.steps.hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,9 +9,7 @@ import static com.hxwr.steps.hooks.*;
 public class AccountCreationPage {
     String failName="";
 
-    public AccountCreationPage(){
-        driver= driverManager.getWebDriver();
-    }
+
     By firstNameInput=By.xpath("//input[@id='customer_firstname']");
     By lastNameInput=By.xpath("//input[@id='customer_lastname']");
     By emailInput=By.xpath("//input[@id='email']");
@@ -41,6 +40,7 @@ public class AccountCreationPage {
            driver.findElement(firstNameInput).sendKeys(hooks.properties.get("first_name"));
         }catch (Exception e){
             System.out.println(failName);
+            ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -48,6 +48,7 @@ public class AccountCreationPage {
             driver.findElement(lastNameInput).sendKeys(hooks.properties.get("last_name"));
         }catch (Exception e){
             System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -56,41 +57,47 @@ public class AccountCreationPage {
             driver.findElement(emailInput).sendKeys(hooks.properties.get("email_address"));
         }catch (Exception e){
             System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter password";
             driver.findElement(passwordInput).sendKeys(hooks.properties.get("password"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter First Name";
             driver.findElement(firstNameAddressInput).sendKeys(hooks.properties.get("first_name"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter Last Name Address";
             driver.findElement(lastNameAddressInput).sendKeys(hooks.properties.get("last_name"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter  Address";
             driver.findElement(addressInput).sendKeys(hooks.properties.get("address"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter City";
             driver.findElement(cityInput).sendKeys(hooks.properties.get("address"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -99,14 +106,16 @@ public class AccountCreationPage {
             String state=properties.get("state");
             select.selectByVisibleText(state);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter post code";
             driver.findElement(postCodeInput).sendKeys(hooks.properties.get("zip_code"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -115,14 +124,16 @@ public class AccountCreationPage {
             String country=properties.get("country");
             select.selectByVisibleText(country);
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="Enter mobile phone";
             driver.findElement(mobilePhoneInput).sendKeys(hooks.properties.get("mobile_phone"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
@@ -130,7 +141,8 @@ public class AccountCreationPage {
             driver.findElement(aliasInput).clear();
             driver.findElement(aliasInput).sendKeys(hooks.properties.get("address_alias"));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -141,7 +153,8 @@ public class AccountCreationPage {
             wait.until(ExpectedConditions.elementToBeClickable(registerButton));
             driver.findElement(registerButton).click();
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -152,7 +165,8 @@ public class AccountCreationPage {
             wait.until(ExpectedConditions.elementToBeClickable(registerButton));
             driver.findElement(registerButton).click();
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
@@ -162,56 +176,64 @@ public class AccountCreationPage {
             failName="verify error message city Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageCityBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="verify error message country Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageCountryBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="verify error message last name Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageLastNameBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="verify error message post code Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessagePstCodeBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="verify error message address Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageAddressBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="verify error message phone number Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessagePhoneNumberBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="verify error message first name Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessageFirstNameBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         try {
             failName="verify error message password Blank ";
             wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessagePassWordBlank));
         }catch (Exception e){
-            System.out.println(failName);
+              System.out.println(failName);
+               ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
             return false;
         }
         return true;
