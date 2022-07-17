@@ -1,9 +1,10 @@
 package com.hxwr;
-
+import com.hxwr.steps.hooks;
 import org.openqa.selenium.WebDriver;
 
 public abstract class DriverManager {
     protected WebDriver driver;
+    public static String firefoxbinary= hooks.properties.get("firefox_binary");
     protected  abstract void createWebDriver();
     public void quitWebDriver(){
         if(null!=driver){
