@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="24.486">
+    <testcase classname="E Commerce Testing" name="User Registration" time="20.561">
+        <system-out>
+            <![CDATA[Given open automation_practice_url in browser FIREFOX.......................passed
+When click on sign in link..................................................passed
+And Enter your email_address in create an account section...................passed
+And click on create an account button.......................................passed
+And enter your personal information address and contact info................passed
+And Click on register button................................................passed
+Then Validate that user is created..........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="E Commerce Testing" name="Verify error Message For Entering incorrect values in fields" time="3.631">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given open automation_practice_url in browser CHROME........................failed
+When click on sign in link..................................................skipped
+And Enter your email_address and click register button......................skipped
+And Enter incorrect values in fields and click register button..............skipped
+Then Verify that error messages for respective fields are displaying........skipped
+
+StackTrace:
+java.lang.AssertionError: 
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.asserts.Assertion$6.doAssert(Assertion.java:136)
+	at org.testng.asserts.Assertion.executeAssert(Assertion.java:25)
+	at org.testng.asserts.Assertion.doAssert(Assertion.java:12)
+	at org.testng.asserts.Assertion.fail(Assertion.java:132)
+	at com.hxwr.steps.MyStepdefs.open(MyStepdefs.java:28)
+	at ✽.open automation_practice_url in browser CHROME(file:///C:/Users/75504/IdeaProjects/TrainingFramework/TrainingFramework/AutomationFramework/src/test/resources/test.feature:28)
+]]>
+        </failure>
+    </testcase>
+</testsuite>

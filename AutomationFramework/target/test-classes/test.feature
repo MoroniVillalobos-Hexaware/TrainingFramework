@@ -24,12 +24,12 @@ Feature:   E Commerce Testing
     And Leave the mandatory fields mark with blank and click register button
     Then Verify that error has been displayed for the mandatory fields
 
-#  Scenario:Verify error Message For Entering incorrect values in fields
-#    Given open automation_practice_url
-#    When click on sign in link
-#    And Enter your email_address and click register button
-#    And Enter incorrect values in fields and click register button
-#    Then Verify that error messages for respective fields are displaying
+  Scenario:Verify error Message For Entering incorrect values in fields
+    Given open automation_practice_url in browser CHROME
+    When click on sign in link
+    And Enter your email_address and click register button
+    And Enter incorrect values in fields and click register button
+   Then Verify that error messages for respective fields are displaying
 
   Scenario:Search Product
     Given open automation_practice_url in browser CHROME

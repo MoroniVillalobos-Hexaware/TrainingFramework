@@ -144,10 +144,8 @@ public class MyStepdefs {
         }
     }
 
-    @And("^Enter incorrect values in fields and click register button$")
-    public void enterIncorrectValuesInFieldsAndClickRegisterButton() {
 
-    }
+
 
     @Then("^Verify that error messages for respective fields are displaying$")
     public void verifyThatErrorMessagesForRespectiveFieldsAreDisplaying() {
@@ -373,6 +371,17 @@ public class MyStepdefs {
             }
         }catch (Exception e){
                 assertion.fail(hooks.FailureTestMessage);
+        }
+    }
+
+    @And("Enter incorrect values in fields and click register button")
+    public void enterIncorrectValuesInFieldsAndClickRegisterButton() {
+        try {
+            if(!accountCreationPage.enterIncorrectValuesInFieldsAndClickRegisterButton()){
+                assertion.fail(hooks.FailureTestMessage);
+            }
+        }catch (Exception e){
+            assertion.fail(hooks.FailureTestMessage);
         }
     }
 }

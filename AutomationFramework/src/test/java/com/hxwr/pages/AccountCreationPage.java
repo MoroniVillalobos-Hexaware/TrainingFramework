@@ -238,4 +238,110 @@ public class AccountCreationPage {
         }
         return true;
     }
+   public boolean enterIncorrectValuesInFieldsAndClickRegisterButton(){
+
+       try {
+           failName="Enter First Name";
+           wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(firstNameInput));
+           driver.findElement(firstNameInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter Last Name";
+           driver.findElement(lastNameInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter email";
+           driver.findElement(emailInput).clear();
+           driver.findElement(emailInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter password";
+           driver.findElement(passwordInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter First Name";
+           driver.findElement(firstNameAddressInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter Last Name Address";
+           driver.findElement(lastNameAddressInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter  Address";
+           driver.findElement(addressInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter City";
+           driver.findElement(cityInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+
+       try {
+           failName="Enter post code";
+           driver.findElement(postCodeInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter Country";
+           Select select= new Select(driver.findElement(countrySelect));
+           String country=properties.get("country");
+           select.selectByVisibleText(country);
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter mobile phone";
+           driver.findElement(mobilePhoneInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+       try {
+           failName="Enter alias";
+           driver.findElement(aliasInput).clear();
+           driver.findElement(aliasInput).sendKeys(hooks.properties.get("incorrect_string"));
+       }catch (Exception e){
+           System.out.println(failName);
+           ExtentCucumberAdapter.addTestStepLog("STEP FAILED: "+failName);
+           return false;
+       }
+        return true;
+   }
 }
